@@ -1,7 +1,11 @@
 import React from 'react'
+import Navbar from '../components/Navbar'
+import ScrollToTopButton from '../components/STT'
 
 const PrivacyPage = () => {
   return (
+    <>
+      <Navbar/>
     <div className='bg-[#eaebed] text-gray-700 p-10'>
      {/* Some changes requried */}
       <h1>Privacy Policy</h1>
@@ -203,6 +207,8 @@ const PrivacyPage = () => {
 </li>
 </ul>
     </div>
+    <ScrollToTopButton/>
+    </>
   )
 }
 

@@ -11,7 +11,7 @@ const Card = ({title, paragraph , img , date , duration , ID }) => {
   };
   const handlerClick  = (id) => {
     router.push(`/update/${id}`);
-              }
+}
   return (
     <div className="max-h-[500px] max-w-sm rounded overflow-hidden shadow-2xl bg-[#eaebed]">
     <img className="w-full max-h-96" src={img} alt="Sunset in the mountains" />

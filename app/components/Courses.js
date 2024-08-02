@@ -14,6 +14,7 @@ const Courses = () => {
           const fetchData = async () => {
             try {
               const response = await axios.get('/api/courses');
+              console.log(response.data)
               setCourses(response.data.courses);
               if(response) {
                    setLoader(false)
@@ -21,12 +22,13 @@ const Courses = () => {
 
             } catch (error) {
               console.error('Error fetching data:', error);
+              console.log(courses)
               setLoader(true)
             }
           };
       
           fetchData();
-        }, []);
+        }, [courses]);
   return (
 <>
 {/* {

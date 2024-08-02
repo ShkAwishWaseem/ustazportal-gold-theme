@@ -113,6 +113,8 @@ import Link from "next/link"
 
 const Navbar = () => {
      const [open , isOpen] = useState(false)
+     const [policy , isPolicy] = useState(false)
+
   return (
     <header>
           <nav>
@@ -143,23 +145,27 @@ const Navbar = () => {
                </div>
                <div className="right">
                     <ul className='flex items-center '>
-                         {/* <li className='px-3'><Link href="#">Home</Link></li>
-                         <li className='px-3'><Link href="#">about</Link></li>
-                         <li className='px-3'><Link href="#">myself</Link></li>
-                         <li className='px-3'><Link href="#">Contact</Link></li>
-                         <li className='px-3'><Link href="#">more</Link></li>
-                         <li className='px-3'><Link href="#">reasources</Link></li> */}
                          <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Home</Link></li>
-                    <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Courses</Link></li>
+                    <li className='mx-4     my-0'><Link href="courses" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Courses</Link></li>
                     <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Our Reach</Link></li>
                     <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Resources</Link></li>
-                    <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>About us</Link></li>
+                    <li className='mx-4  duration-100 my-0' onClick={() => isPolicy(!policy)} ><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Policy</Link></li>
                     <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase hover:text-[#C0A842] duration-50'>Contact</Link></li>
                          <button className='text-sm bg-[#38664D] text-white duration-500 px-6 py-2 mx-4 hover:bg-[#406f55] rounded animate-[wiggle_1s_ease-in-out_infinite] '>Get a free trail </button>
                     </ul>
                </div>
               
 </div>
+{policy ? 
+               <div className="bg-[#C0A842] flex justify-between items-center absolute right-[20%]">
+               <ul className='flex flex-col items-center p-2'>
+               <li className='mx-4    my-0'><Link href="privacy" className='text-sm uppercase '>Privacy policy</Link></li>
+                    <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase '>Return policy</Link></li>
+                    <li className='mx-4     my-0'><Link href="#" className='text-sm uppercase'>Teacher policy</Link></li>
+               </ul>
+               </div>
+               :
+               " " }
 {open ? 
                <>
 
